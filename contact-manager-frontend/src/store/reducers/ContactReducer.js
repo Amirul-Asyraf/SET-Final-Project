@@ -18,10 +18,10 @@ const ContactReducer = (state=initState, action) => {
                 contactResponse:'loading...'
             }
         case 'NEW_CONTACT_SUCCESS':
-            console.log(action);
+            console.log(action.res.messages);
             return {
                 ...state,
-                contactResponse: action.res.message //gets from the backend
+                contactResponse: action.res.messages //gets from the backend
             }
         case 'NEW_CONTACT_CODE_ERROR': 
             console.log(action);

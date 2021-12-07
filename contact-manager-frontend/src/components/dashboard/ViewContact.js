@@ -88,13 +88,13 @@ class ViewContact extends Component {
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>First Name</TableCell>
-                                <TableCell align="right">Last Name</TableCell>
-                                <TableCell align="right">Email</TableCell>
-                                <TableCell align="right">Phone Number</TableCell>
-                                <TableCell align="right">Profile Image</TableCell>
-                                <TableCell align="right">Edit</TableCell>
-                                <TableCell align="right">Delete</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }}>First Name</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }} align="right">Last Name</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }} align="right">Email</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }} align="right">Phone Number</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }} align="right">Profile Image</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }} align="right">Edit</TableCell>
+                                <TableCell style={{ fontWeight: 'bolder' }} align="right">Delete</TableCell>
 
                             </TableRow>
                         </TableHead>
@@ -120,7 +120,7 @@ class ViewContact extends Component {
                                 <TableCell align="right">
 
                                     <img src={loadContacts.file_directory+"/"+row.image_file} width={50} height={50} alt=""/>
-
+                                    {console.log(loadContacts.file_directory+"/"+row.image_file)}
                                 </TableCell>
                                 <TableCell align="right">
                                     <Button 
@@ -153,7 +153,7 @@ class ViewContact extends Component {
                 {loadContacts?
                 <Pagination 
                     className="pagination-restyle"
-                    defaultPageSize={2} 
+                    defaultPageSize={5} 
                     total={loadContacts.data.total} 
                     current={loadContacts.data.current_page}
                     prevIcon={<ArrowBackIosNewIcon sx={{ fontSize: 15}}/>}

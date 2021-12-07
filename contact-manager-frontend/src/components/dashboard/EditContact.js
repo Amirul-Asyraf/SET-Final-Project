@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { connect } from 'react-redux';
-import DefaultImg from '../../img/default-avatar.png';
+import DefaultImg from '../../profile_images/default-avatar.png';
 import {loadSingleDataUser, editContactUser} from '../../store/actions/ContactAction';
 
 class EditContact extends Component {
@@ -55,8 +55,11 @@ class EditContact extends Component {
     }
 
     fileTransform = (e) => {
+        // console.log(e)
         this.getBase64(e.target.files[0], (base64String)=>{
             this.state.profile_image = base64String;
+            // this.state.new_image = base64String;
+
             console.log(this.state);
         })
     }
@@ -137,7 +140,7 @@ class EditContact extends Component {
                         <Button 
                         type="submit" 
                         variant="contained" 
-                        fullWidth>Add Contact</Button>
+                        fullWidth>Update Contact</Button>
 
 
                     </Box>

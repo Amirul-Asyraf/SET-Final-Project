@@ -155,18 +155,18 @@ class ContactController extends Controller
         {
             return response()->json([
                 "success"=>false,
-                "message"=>"This contact as no valid id."
+                "message"=>"This contact has no valid id."
             ], 400);
         }
 
         $getFile = $findData->image_file;
         $getFile == "default-avatar.png" ? : File::delete("./profile_images/".$getFile);
 
-        // $profile_picture = $request->profile_image;
-        $profile_picture = "";
+        $profile_picture = $request->profile_image;
+        // $profile_picture = "";
         $file_name = "";
 
-        if($profile_picture==null) {
+        if($profile_picture==null || $profile_picture == "") {
             $file_name = "default-avatar.png";
         } else {
             $generate_name = uniqid()."_".time().date("Ymd")."_IMG";
@@ -206,15 +206,15 @@ class ContactController extends Controller
             $country_code = $request->country_code;
         }
 
-        $findData->firstname = $request->firstname;
         $findData->phonenumber = $request->phonenumber;
-        $findData->image_file = $file_name;
+        $findData->firstname = $request->firstname;
         $findData->lastname = $request->lastname;
         $findData->email = $request->email;
         $findData->country_code = $request->country_code;
+        $findData->image_file = $file_name;
         $findData->save();
 
-        if($profile_picture == null || $profile_picture=="")
+        if($profile_picture == null)
         {
 
         } else {

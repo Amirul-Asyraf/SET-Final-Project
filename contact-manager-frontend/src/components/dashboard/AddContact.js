@@ -105,7 +105,7 @@ class AddContact extends Component {
 
                     </Box>
 
-                    <b>{contactResponse!=null?contactResponse:null}</b>
+                    <b>{contactResponse!==null && contactResponse!=="" ?contactResponse:null}</b>
                 </form>
             </div>
         )

@@ -17,7 +17,7 @@ export const addNewContact = (credentials) => {
 //function loads paginated contacts
 export const loadContacts = (page) => {
     let token = localStorage.getItem('user');
-    let pager = 2;
+    let pager = 5;
     let contactsDataUrl;
     if(page==="") {
         contactsDataUrl = "user/contact/get-all/"+token+"/"+pager;
